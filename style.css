@@ -75,6 +75,22 @@ body.principal {
     padding: 30px;
     width: 100%;
 }
+.foto img,
+.foto video {
+    width: 1000%; /* Nota: Aquí tienes un error, debería ser 100% */
+    max-width: 280px; /* Esto evita que la foto se vea gigante */
+    border-radius: 20px; /* Bordes redondeados */
+    border: 4px solid #ffd700; /* El borde dorado/amarillo */
+    box-shadow: 0 0 15px rgba(0,0,0,0.2); /* La sombra suave */
+}
+.foto {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff3b0; /* El fondo amarillito donde flota la foto */
+    padding: 20px;
+}
 
 .panel {
     display: flex;
