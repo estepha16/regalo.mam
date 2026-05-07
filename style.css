@@ -1,0 +1,257 @@
+/* =========================
+🌻 RESET GENERAL
+========================= */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg, #fff8dc, #ffe680);
+    overflow-x: hidden;
+    color: #333;
+}
+
+/* =========================
+🌻 CARGA
+========================= */
+body.carga{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carga .contenedor{
+    text-align: center;
+}
+
+.carga h1{
+    color: #d4a200;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.barra{
+    width: 300px;
+    height: 18px;
+    background: white;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.progreso{
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(45deg, #ffd700, #ffb300);
+    animation: cargar 5s forwards;
+}
+
+@keyframes cargar{
+    from{width: 0%;}
+    to{width: 100%;}
+}
+
+/* =========================
+🌻 PRINCIPAL & CONTENEDORES
+========================= */
+body.principal {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Contenedor de la Galería/Botones Familia */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* ESTO CENTRA LOS BOTONES */
+    text-align: center;
+    padding: 30px;
+    width: 100%;
+}
+
+.panel {
+    display: flex;
+    width: 90%;
+    max-width: 1000px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+/* =========================
+🌻 MENÚ Y BOTONES (ACTUALIZADO)
+========================= */
+.menu {
+    width: 60%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra botones dentro del menú */
+}
+
+button {
+    display: block;
+    width: 90%;
+    max-width: 400px;       /* Evita que se estiren de más en PC */
+    margin: 12px auto;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;    /* Forma redondeada de tu foto */
+    background: linear-gradient(45deg, #ffd700, #ffb300);
+    color: #5a3e00;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .3s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #ffcc00, #ffa200);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* =========================
+🌻 APARTADO DE LA CARTA (VERSIÓN CON PANDA)
+========================= */
+.seccion-carta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.papel {
+    background-color: #ffffff;
+    /* Cuadrícula estilo cuaderno */
+    background-image: 
+        linear-gradient(#e8dada 1px, transparent 1px),
+        linear-gradient(90deg, #e8dada 1px, transparent 1px);
+    background-size: 30px 30px;
+    width: 100%;
+    max-width: 450px;
+    padding: 60px 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    position: relative;
+    border: 1px solid #ddd;
+}
+
+.contenido-carta {
+    font-family: 'Indie Flower', cursive;
+    color: #333;
+    font-size: 1.4rem;
+    line-height: 1.8;
+    text-align: left; /* Alineado a la izquierda para que parezca más una nota real */
+}
+
+.contenido-carta h1 {
+    font-size: 1.8rem;
+    color: #6d4c41;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.contenido-carta p {
+    margin-bottom: 10px;
+}
+
+/* Decoración de panda */
+.decoracion-panda {
+    position: ;
+    bottom: 20px;
+    left: 80px; /* Posicionado abajo a la izquierda */
+    width: 100px; /* Tamaño del panda */
+    opacity: 0.9; /* Un poco transparente para no tapar */
+}
+
+.decoracion-panda img {
+    width: 300%;
+    height: auto;
+}
+
+.firma {
+    margin-top: 40px;
+    font-weight: bold;
+    text-align: right;
+    color: #555;
+}
+
+/* =========================
+🌻 GALERÍA DE IMÁGENES
+========================= */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.galeria img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 4px solid #ffd700;
+    transition: .3s;
+    cursor: pointer;
+}
+
+/* =========================
+🌻 VISOR DE IMAGEN (ARREGLADO)
+========================= */
+.visor {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Muy alto para que nada lo tape */
+}
+
+.visor img {
+    max-width: 90%;
+    max-height: 85%;
+    border-radius: 10px;
+    border: 3px solid white;
+    animation: zoom .3s ease;
+}
+
+@keyframes zoom {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+#cerrar {
+    position: absolute;
+    top: 20px; right: 30px;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+}
+
+/* =========================
+📱 RESPONSIVE
+========================= */
+@media(max-width: 768px){
+    .panel { flex-direction: column; }
+    .foto, .menu { width: 100%; }
+    button { width: 100%; }
+    .visor img { max-width: 95%; }
+}

@@ -1,0 +1,137 @@
+const galeria = document.getElementById("galeria");
+
+// 📁 CARPETA CORRECTA
+const carpeta = "Fotos_cuatro/";
+
+// 📸 LISTA DE FOTOS (SOLO NOMBRES)
+const imagenes = [
+"20220625_224229.jpg",
+"20220625_224231.jpg",
+"20220625_224234.jpg",
+"20220625_224237.jpg",
+"20220625_224238.jpg",
+"20220625_224239.jpg",
+"20231111_085439.jpg",
+"20231111_085442.jpg",
+"20240802_153932.jpg",
+"20240802_153934.jpg",
+"20240802_153936.jpg",
+"20250730_163151.jpg",
+"20250730_163152.jpg",
+"20250802_170810.jpg",
+"B612_20250726_104725_838.jpg",
+"B612_20250803_213221_711.jpg",
+"B612_20250803_213232_143.jpg",
+"B612_20250803_213248_376.jpg",
+"B612_20250803_215224_459.jpg",
+"B612_20260430_204221_519.jpg",
+"IMG-20250525-WA0018.jpg",
+"IMG-20250804-WA0013.jpg",
+"IMG-20250804-WA0015.jpg",
+"IMG-20250817-WA0012.jpg",
+"IMG-20250817-WA0013.jpg",
+"IMG-20250817-WA0017.jpg",
+"IMG-20250817-WA0018.jpg",
+"IMG-20250817-WA0031.jpg",
+"IMG-20250817-WA0035.jpg",
+"IMG-20250817-WA0037.jpg",
+"IMG-20250817-WA0038.jpg",
+"IMG-20250817-WA0039.jpg",
+"IMG-20250817-WA0041.jpg",
+"IMG-20250817-WA0044.jpg",
+"IMG-20250817-WA0045.jpg",
+"IMG-20250817-WA0046.jpg",
+"IMG-20250817-WA0051.jpg",
+"IMG-20250817-WA0054.jpg",
+"IMG-20250817-WA0055.jpg",
+"IMG-20250817-WA0067.jpg",
+"IMG-20250817-WA0069.jpg",
+"IMG-20250817-WA0078.jpg",
+"IMG-20250817-WA0097.jpg",
+"IMG-20250817-WA0106.jpg",
+"IMG-20250817-WA0109.jpg",
+"IMG-20250817-WA0113.jpg",
+"IMG-20250817-WA0115.jpg",
+"IMG-20250817-WA0117.jpg",
+"IMG-20250817-WA0121.jpg",
+"IMG-20250817-WA0124.jpg",
+"IMG-20250817-WA0131.jpg",
+"IMG-20250817-WA0134.jpg",
+"IMG-20250817-WA0135.jpg",
+"IMG-20250817-WA0139.jpg",
+"IMG-20250817-WA0142.jpg",
+"IMG-20250817-WA0148.jpg",
+"IMG-20250817-WA0151.jpg",
+"IMG-20250817-WA0152.jpg",
+"IMG-20250817-WA0153.jpg",
+"IMG-20250817-WA0154.jpg",
+"IMG-20250817-WA0155.jpg",
+"IMG-20250817-WA0157.jpg",
+"IMG-20250817-WA0158.jpg",
+"IMG-20250817-WA0159.jpg",
+"IMG-20250817-WA0161.jpg",
+"IMG-20250817-WA0162.jpg",
+"IMG-20250817-WA0164.jpg",
+"IMG-20250818-WA0039.jpg",
+"IMG-20250818-WA0046.jpg",
+"IMG-20250818-WA0048.jpg",
+"IMG-20250818-WA0060.jpg",
+"IMG-20250818-WA0063.jpg",
+"IMG-20250818-WA0064.jpg",
+"IMG-20250818-WA0065.jpg",
+"IMG-20250818-WA0066.jpg",
+"IMG-20250818-WA0071.jpg",
+"IMG-20250818-WA0073.jpg",
+"IMG-20250818-WA0075.jpg",
+"IMG-20250818-WA0077.jpg",
+"IMG-20250818-WA0079.jpg",
+"IMG-20250818-WA0080.jpg",
+"IMG-20250818-WA0081.jpg",
+"IMG-20250818-WA0087.jpg",
+"IMG-20250818-WA0094.jpg",
+"IMG-20250818-WA0096.jpg",
+"IMG-20250818-WA0097.jpg",
+"IMG-20250818-WA0098.jpg",
+"IMG-20250818-WA0105.jpg",
+"IMG-20250818-WA0112.jpg",
+"IMG-20250818-WA0117.jpg",
+"IMG-20250818-WA0118.jpg",
+"IMG-20250818-WA0119.jpg",
+"IMG-20251207-WA0007.jpg",
+"IMG-20251207-WA0009.jpg",
+"IMG-20260222-WA0005.jpg",
+"IMG-20260222-WA0006.jpg",
+"IMG-20260430-WA0045.jpg",
+"IMG-20260430-WA0048.jpg",
+"IMG-20260430-WA0054.jpg",
+"IMG-20260430-WA0077.jpg",
+"IMG-20260430-WA0096.jpg",
+"IMG-20260504-WA0021.jpg"
+];
+
+// CREAR GALERÍA
+const visor = document.getElementById("visor");
+const imgGrande = document.getElementById("imgGrande");
+const cerrar = document.getElementById("cerrar");
+
+imagenes.forEach(nombre=>{
+    let img = document.createElement("img");
+    img.src = carpeta + nombre;
+
+    img.onclick = ()=>{
+        visor.style.display = "flex";
+        imgGrande.src = img.src;
+    };
+
+    galeria.appendChild(img);
+});
+
+cerrar.onclick = ()=>{
+    visor.style.display = "none";
+};
+
+visor.onclick = (e)=>{
+    if(e.target === visor){
+        visor.style.display = "none";
+    }
+};

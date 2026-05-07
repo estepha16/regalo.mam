@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilo para que el overlay no se vea pero cubra todo */
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999; /* Siempre por encima de todo */
+            background: transparent;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="principal fade">
+
+    <!-- 🔍 CAPA INVISIBLE (Captura el primer clic para activar la música) -->
+    <div id="overlay"></div>
+
+    <!-- 🎵 MUSICA -->
+    <audio id="musica" loop>
+        <source src="feliz-cumple.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="panel">
+
+        <!-- FOTO -->
+        <div class="foto">
+            <img src="B612_20260504_193314_432.jpg" alt="Foto principal">
+        </div>
+
+        <!-- MENÚ -->
+        <div class="menu">
+
+            <h2>🌻 Menú Especial 🌻</h2>
+
+            <button onclick="window.location.href='fotos_sola.html'">
+                📷 Fotos sola
+            </button>
+
+            <button onclick="window.location.href='fotos_4.html'">
+                💛 Fotos 4
+            </button>
+
+            <button onclick="window.location.href='fotos_familia.html'">
+                👨‍👩‍👧‍👦 Fotos en familia
+            </button>
+
+            <button onclick="window.location.href='dedicatorias.html'">
+                🎥❤️‍🩹 Dedicatorias
+            </button>
+
+            <button onclick="window.location.href='carta.html'">
+                💌📝 Carta
+            </button>
+
+            <button onclick="window.location.href='juegos.html'">
+                🎮 Juegos
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- SCRIPT GENERAL -->
+    <script src="script.js"></script>
+
+</body>
+</html>
